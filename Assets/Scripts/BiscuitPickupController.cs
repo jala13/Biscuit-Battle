@@ -15,7 +15,7 @@ public class BiscuitPickupController : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<PlayerController>().AddBiscuit(1);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }

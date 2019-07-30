@@ -127,7 +127,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &-1962023142106843904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,5 +143,11 @@ MonoBehaviour:
   bloodVFX: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
   destroyVFX: {fileID: 100000, guid: 3156817f64ec68948ad6bb26569b9ef5, type: 3}
   destroySound: {fileID: 8300000, guid: 65a8e1f13143c47ab9b96881eac40dff, type: 3}
+  playerHitSound: {fileID: 8300000, guid: a28318749ba7f468c9d1bce76a288b49, type: 3}
+  germanSoldierAHitSound: {fileID: 8300000, guid: 8adcf1acb91a84a9d856a618b18e9bf4,
+    type: 3}
+  germanSoldierBHitSound: {fileID: 8300000, guid: d6585756fe6894b499b5ee70ae3b1f88,
+    type: 3}
   sizeBloodVFX: 1.5
   sizeDestroyVFX: 0.5
+  fromEnemy: 0

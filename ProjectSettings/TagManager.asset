@@ -5,8 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - FxTemporaire
-  - BiscuitPickup
   - Pickups
+  - Non Physical
+  - Enemy
+  - German Soldier A
+  - German Soldier B
   layers:
   - Default
   - TransparentFX
