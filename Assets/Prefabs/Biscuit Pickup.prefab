@@ -110,6 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c11f70acc1d2c4aaed330f9f02d58b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupSound: {fileID: 8300000, guid: 8cdf3656007c542778040b33e0027347, type: 3}
+  pickupVFX: {fileID: 100018, guid: a40b64bf23366dc42a892af2c6ff6140, type: 3}
+  sizePickupVFX: 0.6
 --- !u!135 &1173432081141314555
 SphereCollider:
   m_ObjectHideFlags: 0

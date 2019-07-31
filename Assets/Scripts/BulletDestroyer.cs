@@ -47,7 +47,7 @@ public class BulletDestroyer : MonoBehaviour
             Destroy(tmpHit, 1);
             Destroy(gameObject);
         }
-        else if(other.gameObject.tag != "Non Physical" && other.gameObject.tag != "Pickup")
+        else if(other.gameObject.tag != "Non Physical" && other.gameObject.tag != "Pickups")
         {
             AudioSource.PlayClipAtPoint(destroySound, gameObject.transform.position);
             destroyVFX.transform.localScale = new Vector3(sizeDestroyVFX, sizeDestroyVFX, sizeDestroyVFX);

@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         anim.SetBool("isDead", false);
-        health = 3000;
+        health = 3;
         gameController.GetComponent<GameController>().ResetHealth();
         flamethrowerActive = false;
         powerupBank = 0;
@@ -77,6 +77,11 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("isShooting", false);
             }
         }
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 
 
@@ -120,6 +125,7 @@ public class PlayerController : MonoBehaviour
             isDead = true;
             anim.SetBool("isDead", true);
             AudioSource.PlayClipAtPoint(playerDeathSound, gameObject.transform.position);
+            gameController.GetComponent<GameController>().EndGame();
         }
     }
 

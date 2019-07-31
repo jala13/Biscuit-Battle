@@ -38,13 +38,17 @@ public class GermanSoldierAController : MonoBehaviour
         health = startHealth;
         player = GameObject.FindGameObjectWithTag("Player");
         nextFire = Time.time + fireRate;
-        active = false;
+        Disable();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Check if mouse is pressed and fire a bullet, also change to correct animation state
+        if (player.GetComponent<PlayerController>().GetHealth() < 1)
+        {
+            active = false;
+        }
+
         if (Time.time > nextFire && active && !isDead)
         {
             nextFire = Time.time + fireRate;
@@ -90,11 +94,13 @@ public class GermanSoldierAController : MonoBehaviour
         if (health == 0)
         {
             isDead = true;
+            //gameObject.GetComponent<Rigidbody>().useGravity = false;
+            gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ |
+                                                               RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            gameObject.GetComponent<BoxCollider>().enabled = false;
             anim.SetBool("isDead", true);
             AudioSource.PlayClipAtPoint(germanSoldierADeathSound, gameObject.transform.position);
             Instantiate(biscuit, biscuitSpawn.position, biscuitSpawn.rotation);
-            gameObject.GetComponent<Rigidbody>().useGravity = false;
-            gameObject.GetComponent<BoxCollider>().enabled = false;
             Destroy(gameObject, 10);
         }
     }
@@ -102,10 +108,35 @@ public class GermanSoldierAController : MonoBehaviour
     public void Disable()
     {
         active = false;
+        SearchForChild("Bip001", transform).gameObject.SetActive(false);
+        SearchForChild("Body_german_A", transform).gameObject.SetActive(false);
+
     }
 
     public void Enable()
     {
         active = true;
+        SearchForChild("Bip001", transform).gameObject.SetActive(true);
+        SearchForChild("Body_german_A", transform).gameObject.SetActive(true);
+    }
+
+    Transform SearchForChild(string name, Transform currentTransform)
+    {
+        foreach (Transform child in currentTransform)
+        {
+            if (child.name == name)
+            {
+                return child;
+            }
+            else if (child.GetChildCount() != 0)
+            {
+                Transform deeperChild = SearchForChild(name, child);
+                if (deeperChild.name == name)
+                {
+                    return deeperChild;
+                }
+            }
+        }
+        return transform;
     }
 }
