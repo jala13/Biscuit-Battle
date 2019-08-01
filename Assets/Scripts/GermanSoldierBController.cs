@@ -70,7 +70,7 @@ public class GermanSoldierBController : MonoBehaviour
     {
         //Make the npc face and move towards the player
         float moveV = speed * Time.deltaTime;
-        if (moveV != 0 && active && !isDead)
+        if (active && !isDead)
         {
             Vector3 playerPos = player.transform.position;
             Vector3 rotationDelta = new Vector3(playerPos.x - gameObject.transform.position.x, 0f,
@@ -79,6 +79,15 @@ public class GermanSoldierBController : MonoBehaviour
             gameObject.transform.rotation = rotation;
 
             anim.SetBool("isWalking", true);
+            transform.Translate(0, 0, moveV);
+        }
+        else if(!active && !isDead)
+        {
+            Vector3 playerPos = player.transform.position;
+            Vector3 rotationDelta = new Vector3(playerPos.x - gameObject.transform.position.x, 0f,
+                                                playerPos.z - gameObject.transform.position.z);
+            Quaternion rotation = Quaternion.LookRotation(rotationDelta);
+            gameObject.transform.rotation = rotation;
             transform.Translate(0, 0, moveV);
         }
         else

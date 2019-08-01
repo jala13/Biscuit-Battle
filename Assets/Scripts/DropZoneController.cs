@@ -31,6 +31,8 @@ public class DropZoneController : MonoBehaviour
                 buiscuitsAtBase += other.gameObject.GetComponent<PlayerController>().biscuitsCarried;
                 other.gameObject.GetComponent<PlayerController>().AddBiscuit(-other.gameObject.GetComponent<PlayerController>().biscuitsCarried);
                 gameController.GetComponent<GameController>().SetScore(buiscuitsAtBase);
+                gameController.GetComponent<GameController>().Reset();
+                other.gameObject.GetComponent<PlayerController>().SetHealth(other.gameObject.GetComponent<PlayerController>().startingHealth);
             }
         }
     }

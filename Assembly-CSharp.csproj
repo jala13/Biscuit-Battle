@@ -64,7 +64,6 @@
      <Compile Include="Assets\Imports\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
      <Compile Include="Assets\Imports\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
      <Compile Include="Assets\Scripts\AlertController.cs" />
-     <Compile Include="Assets\Scripts\BiscuitPickupController.cs" />
      <Compile Include="Assets\Scripts\BoundaryDestroyer.cs" />
      <Compile Include="Assets\Scripts\BulletDestroyer.cs" />
      <Compile Include="Assets\Scripts\BulletMover.cs" />
@@ -76,10 +75,14 @@
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\GermanSoldierAController.cs" />
      <Compile Include="Assets\Scripts\GermanSoldierBController.cs" />
+     <Compile Include="Assets\Scripts\HighscoreController.cs" />
      <Compile Include="Assets\Scripts\MainMenuController.cs" />
+     <Compile Include="Assets\Scripts\Pickups\BiscuitPickupController.cs" />
+     <Compile Include="Assets\Scripts\Pickups\HealthPickupController.cs" />
+     <Compile Include="Assets\Scripts\Pickups\RapidFirePickupController.cs" />
+     <Compile Include="Assets\Scripts\Pickups\WeaponPickupController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Rotator.cs" />
-     <Compile Include="Assets\Scripts\WeaponPickupController.cs" />
      <None Include="Assets\Imports\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Imports\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Imports\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />

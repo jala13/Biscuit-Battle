@@ -778,12 +778,13 @@ MonoBehaviour:
   powerupTime: 5
   bulletSpawn: {fileID: 1748353937251863787}
   flamewthrowerSpawn: {fileID: 1360585631}
-  flamethrowerFireRate: 0.4
+  flamethrowerFireRate: 0.6
   bulletFireRate: 1
   bullet: {fileID: 4068010282534082865, guid: 075f162176579cf45bdc5130ba3e3a54, type: 3}
   flamethrowerProjectile: {fileID: 1350335315186273561, guid: a6ad29ef47e7b3a4db488fa4b0839552,
     type: 3}
   shootAngle: 30
+  startingHealth: 0
   hitRate: 1
   biscuitsCarried: 0
   playerDeathSound: {fileID: 8300000, guid: c27b1b7f981c64d9b8876bf8397ecd53, type: 3}

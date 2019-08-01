@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public float shootAngle;
 
     //Health
+    public int startingHealth;
     private int health;
     private bool isDead;
     public float hitRate;
@@ -40,10 +41,10 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         anim.SetBool("isDead", false);
-        health = 3;
         gameController.GetComponent<GameController>().ResetHealth();
         flamethrowerActive = false;
         powerupBank = 0;
+        health = startingHealth;
     }
 
     // Update is called once per frame
@@ -82,6 +83,11 @@ public class PlayerController : MonoBehaviour
     public int GetHealth()
     {
         return health;
+    }
+
+    public void SetHealth(int n)
+    {
+        health = n;
     }
 
 
@@ -149,7 +155,7 @@ public class PlayerController : MonoBehaviour
         return speed * direction.normalized;
     }
 
-    public void ChangeToFlamethrower()
+    public void ApplyFlamethrower()
     {
         if (!flamethrowerActive)
         {
@@ -157,12 +163,12 @@ public class PlayerController : MonoBehaviour
             SearchForChild("w_flamethrower", transform).gameObject.SetActive(true);
             SearchForChild("backpack_flamethrower", transform).gameObject.SetActive(true);
             SearchForChild("w_rifle", transform).gameObject.SetActive(false);
-            StartCoroutine(PowerupTimer());
+            StartCoroutine(FlamethrowerTimer());
         }
         else
         {
             powerupBank += 1;
-            StartCoroutine(PowerupTimer());
+            StartCoroutine(FlamethrowerTimer());
         }
     }
 
@@ -181,10 +187,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator PowerupTimer()
+    IEnumerator FlamethrowerTimer()
     {
         yield return new WaitForSeconds(powerupTime);
         RemoveFlamethrower();
+    }
+
+    public void ApplyRapidFire()
+    {
+        bulletFireRate *= 0.3333f;
+        StartCoroutine(RapidFireTimer());
+    }
+
+    public void RemoveRapidFire()
+    {
+        bulletFireRate *= 3f;
+    }
+
+    IEnumerator RapidFireTimer()
+    {
+        yield return new WaitForSeconds(2*powerupTime);
+        RemoveRapidFire();
     }
 
     Transform SearchForChild(string name, Transform currentTransform)
@@ -195,7 +218,7 @@ public class PlayerController : MonoBehaviour
             {
                 return child;
             }
-            else if(child.GetChildCount() != 0)
+            else if(child.childCount != 0)
             {
                 Transform deeperChild = SearchForChild(name, child);
                 if (deeperChild.name == name)

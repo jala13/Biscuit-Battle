@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2169338436826868365}
   - component: {fileID: 8509285625854684218}
   - component: {fileID: 8752621744865012059}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flamethrower Projectile Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,19 +142,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd45e233a91d8bd4c8d9f60922689aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodVFX: {fileID: 1134129239631916, guid: c46cccb82891daa4083f69e9363f59e9, type: 3}
-  destroyVFX: {fileID: 1134129239631916, guid: c46cccb82891daa4083f69e9363f59e9, type: 3}
   destroyAreaVFX: {fileID: 100004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
   destroyAreaObject: {fileID: 2409033449311002290, guid: 9c0f16a930acdd44097405cf3a209b1d,
     type: 3}
-  playerHitSound: {fileID: 8300000, guid: a28318749ba7f468c9d1bce76a288b49, type: 3}
-  germanSoldierAHitSound: {fileID: 8300000, guid: 8adcf1acb91a84a9d856a618b18e9bf4,
-    type: 3}
-  germanSoldierBHitSound: {fileID: 8300000, guid: d6585756fe6894b499b5ee70ae3b1f88,
-    type: 3}
-  sizeBloodVFX: 0.5
   sizeDestroyAreaVFX: 3
-  fromEnemy: 0
 --- !u!96 &8752621744865012059
 TrailRenderer:
   serializedVersion: 2

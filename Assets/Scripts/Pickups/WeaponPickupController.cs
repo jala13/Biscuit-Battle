@@ -13,7 +13,7 @@ public class WeaponPickupController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.GetComponent<PlayerController>().ChangeToFlamethrower();
+            other.gameObject.GetComponent<PlayerController>().ApplyFlamethrower();
             Destroy(gameObject);
         }
     }

@@ -48,7 +48,7 @@ public class FlamethrowerDestroyer : MonoBehaviour
             Destroy(tmpHit, 1);
             Destroy(gameObject);
         }*/
-        if (other.gameObject.tag != "Non Physical" && other.gameObject.tag != "Pickup")
+        if (other.gameObject.tag != "Non Physical" && other.gameObject.tag != "Pickup" && other.gameObject.tag != "German Soldier A" && other.gameObject.tag != "German Soldier B")
         {
             destroyAreaVFX.transform.localScale = new Vector3(sizeDestroyAreaVFX, sizeDestroyAreaVFX, sizeDestroyAreaVFX);
             GameObject tmpExp = Instantiate(destroyAreaVFX, transform.position + new Vector3(0f,1f,0f), 
